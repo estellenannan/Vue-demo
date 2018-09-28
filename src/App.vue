@@ -1,10 +1,10 @@
 <template>
   <div id="root">
     <div class="todo-container">
-      <div class="todo-wrap">
+      <div class="todo-wrap" >
 
-        <TodoHeader :addTodo="addTodo"></TodoHeader>
-        <List ：todos="todos"></List>
+        <TodoHeader :addTodo="addTodo" ></TodoHeader>
+        <List ：todos="todos" ></List>
         <TodoFooter></TodoFooter>
 
       </div>

@@ -1,6 +1,6 @@
 <template>
   <ul class="todo-main">
-     <Item v-for="(todo , index) in todos" :key="index" :todo="todo"></Item>
+     <Item v-for="(todo , index) in todos " :key="index" :todo="todo"></Item>
   </ul>
 
 </template>
@@ -8,7 +8,9 @@
 <script>
   import Item from './Item.vue'
   export default {
-    props : ['todos'],
+    props : {
+      todos: Object
+    },
     data() {
      return {
 

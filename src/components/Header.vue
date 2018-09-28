@@ -6,6 +6,12 @@
 
 <script>
   export default {
+    props:{
+      addTodo:{
+        type:Function,
+        required:true
+      }
+    },
     data() {
       return {
 
