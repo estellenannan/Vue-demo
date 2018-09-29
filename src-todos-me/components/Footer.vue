@@ -1,21 +1,21 @@
 <template>
   <div class="todo-footer">
     <label>
-      <input type="checkbox"/>
+      <input type="checkbox" v-model="isCheck"/>
     </label>
     <span>
-          <span>已完成0</span> / 全部2
+          <span>已完成{{completeSize}}</span> / 全部{{todos.length}}
         </span>
-    <button class="btn btn-danger">清除已完成任务</button>
+    <button class="btn btn-danger" v-show="completeSize" @click="deleteComplete">清除已完成任务</button>
   </div>
 </template>
 
 <script>
   export default {
-    data() {
-      return {
-
-      }
+    props: {
+      todos: Array,
+      deleteComplete: Function,
+      selectAll: Function
     }
   }
 </script>

@@ -1,15 +1,21 @@
-
-
 import Vue from 'vue';
-import App from './App.vue';
-import './main.css'
-new Vue({
-    el : '#app',
-    data : {
+import {Button} from 'mint-ui';
 
-    },
-  components: {
-      App
+import App from './App.vue';
+import router from './router'
+
+//全局定义组件
+Vue.component(Button.name,Button);
+
+new Vue({
+  el: '#app',
+  data() {
+
   },
-    template: '<App/>'
+  components: {
+    App
+  },
+  template: '<App/>', // 将<App/>渲染到页面的el元素中
+
+  router //注册路由器
 });

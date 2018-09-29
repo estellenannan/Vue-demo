@@ -1,54 +1,56 @@
 <template>
-  <div id="root">
-    <div class="todo-container">
-      <div class="todo-wrap" >
 
-        <TodoHeader :addTodo="addTodo" ></TodoHeader>
-        <List ：todos="todos" ></List>
-        <TodoFooter></TodoFooter>
+  <div>
+    <div class="row">
+      <div class="col-xs-offset-2 col-xs-8">
+        <div class="page-header"><h2>Router Basic - 01</h2></div>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-2">
+        <div class="list-group">
+          <!--路由链接-->
+          <router-link class="list-group-item" to="/about">About</router-link>
+          <router-link class="list-group-item" to="/home">Home</router-link>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="panel">
+          <div class="panel-body">
+
+              <!--显示当前路由组件界面-->
+              <router-view msg="abc"/>
+
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
+
 </template>
 
 <script>
-  import Header from './components/Header.vue'
-  import List from './components/List.vue'
-  import Footer from './components/Footer.vue'
+  import About from './pages/About.vue';
+  import Home from './pages/Home.vue';
 
   export default {
     data() {
-      return {
-        todos: [
-          {title: '吃饭', complete: false},
-          {title: '睡觉', complete: true},
-          {title: '敲代码', complete: false},
-        ]
-      }
+      return {}
     },
-    components: {
-      TodoHeader: Header,
-      List,
-      TodoFooter: Footer
-    },
-    methods: {
-      addTodo (todo) {
-        this.todos.unshift(todo);
-      }
+    component: {
+      About,
+      Home
+
     }
   }
 </script>
 
 <style>
-  .todo-container {
-    width: 600px;
-    margin: 0 auto;
-  }
-  .todo-container .todo-wrap {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+
+  .router-link-active {
+    color: red !important;
   }
 </style>

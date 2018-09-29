@@ -1,14 +1,16 @@
 <template>
   <div>
-    Home
+    <h2>About组件</h2>
+    <p>{{msg}}</p>
+    <input type="text">
   </div>
 </template>
 
 <script>
   export default {
-    data() {
-      return {}
-    }
+  props:{
+    msg:String
+  }
   }
 </script>
 
